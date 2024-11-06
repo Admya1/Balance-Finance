@@ -15,7 +15,7 @@ const expenseEmail = async () => {
       lastWarningTimeStamp: null,
       isWarningActive: false
     });
-    if (totalExpense > 10000 && !warningStatus.isWarningActive) {
+    if (totalExpense > 30000 && !warningStatus.isWarningActive) {
       let messageoption = {
         from: process.env.EMAIL,
         to: process.env.ADMIN_EMAIL,
@@ -28,7 +28,7 @@ const expenseEmail = async () => {
       warningStatus.isWarningActive = true;
       await warningStatus.save();
     }
-    else if (totalExpense < 10000 && warningStatus.isWarningActive) {
+    else if (totalExpense < 30000 && warningStatus.isWarningActive) {
       warningStatus.lastWarningTimeStamp = null;
       warningStatus.isWarningActive = false;
       await warningStatus.save();

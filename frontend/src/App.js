@@ -19,11 +19,9 @@ function App() {
     switch(active){
       case 1:
         return <Dashboard />
-      // case 2:
-      //   return <Dashboard />
-      case 3:
+      case 2:
         return <Income />
-      case 4: 
+      case 3: 
         return <Expenses />
       default: 
         return <Dashboard />
